@@ -72,10 +72,10 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         addKeyListener(this);
 
         //load images
-        backgroundImg = new ImageIcon(getClass().getResource("./flappybirdbg.png")).getImage();
-        birdImg = new ImageIcon(getClass().getResource("./flappybird.png")).getImage();
-        topPipeImg = new ImageIcon(getClass().getResource("./toppipe.png")).getImage();
-        bottomPipeImg = new ImageIcon(getClass().getResource("./bottompipe.png")).getImage();
+        backgroundImg = new ImageIcon(getClass().getResource("/flappybirdbg.png")).getImage();
+        birdImg = new ImageIcon(getClass().getResource("/flappybird.png")).getImage();
+        topPipeImg = new ImageIcon(getClass().getResource("/toppipe.png")).getImage();
+        bottomPipeImg = new ImageIcon(getClass().getResource("/bottompipe.png")).getImage();
 
         //bird
         bird = new Bird(birdImg);
@@ -212,4 +212,15 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {}
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Flappy Bird");
+        FlappyBird gamePanel = new FlappyBird();
+        frame.add(gamePanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+    }
 }
